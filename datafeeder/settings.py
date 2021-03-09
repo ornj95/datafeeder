@@ -25,7 +25,7 @@ SECRET_KEY = '8_&r1hr#2!@f4^)4h(t&7&g7+%9h-*r60n2^-5h8koe76wc^_a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 import account
 # Login_required Decorator
 LOGIN_URL = 'login/'
