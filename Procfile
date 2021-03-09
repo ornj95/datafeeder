@@ -1,1 +1,1 @@
-web: gunicorn SahuBeemaKendra10.wsgi
+web: gunicorn datafeeder.wsgi
