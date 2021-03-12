@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from rest_framework.routers import DefaultRouter
 
 from account.views import (
     registration_view,
@@ -36,6 +37,15 @@ from .views import (
     HomeClassView,
 
 )
+
+from api.views import (
+    ArticlesViewSet,
+
+)
+
+router_view_set = DefaultRouter()
+router_view_set.register('', ArticlesViewSet, basename='item_base')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -44,6 +54,8 @@ urlpatterns = [
     path('crudformHome', home_views, name="crudformhome"),
     path('crudformdelete/<int:id>/', delete_item, name="curdformdelete"),
     path('crudformupdate/<int:id>/', update_item, name="curdformupdate"),
+
+    path('api/', include(router_view_set.urls), name='item_api_view_set'),
 
     path('register/', registration_view, name='register'),
     path('logout/', logout_view, name='logout'),
