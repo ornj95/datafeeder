@@ -7,6 +7,7 @@ from django.shortcuts import render
 from feeds.models import Feeds
 
 
+@login_required(redirect_field_name='')
 def feeds_home(request):
     # items = Feeds.objects.all().filter(published__date=datetime.today()).order_by('-published')
     items = Feeds.objects.all().order_by('-published')
