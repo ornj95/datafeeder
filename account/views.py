@@ -15,10 +15,10 @@ def registration_view(request):
             user.backend = "django.contrib.auth.backends.ModelBackend"
             user.save()
 
-            # email = form.cleaned_data.get('email')
-            # raw_password = form.cleaned_data.get('password1')
-            # account = authenticate(email=email, password=raw_password)
-            # login(request, account)
+            email = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            account = authenticate(username=email, password=raw_password)
+            login(request, account)
             return redirect('login')
         else:
             context['registration_form'] = form
