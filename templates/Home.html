@@ -6,13 +6,13 @@
     <div class="row" style="padding: 100px" >
         {% if request.user.is_authenticated %}
             <p style="align-content: center">
-                <a class="btn btn-outline-primary" href="{% url 'crudformhome' %}">CRUD USING DJANGO FORMS</a> |
+                <a class="btn btn-outline-primary" href="{% url 'crudformhome' %}">Articles</a> |
             </p>
             <p style="align-content: center">
-                <a class="btn btn-outline-primary" href="{% url 'crud_ajax' %}">CRUD USING AJAX AND JQUERY/Class Views</a> |
+                <a class="btn btn-outline-primary" href="{% url 'feeds_home' %}">FEED</a> |
             </p>
             <p style="align-content: center">
-                <a class="btn btn-outline-primary" href="{% url 'crudajaxfunbasedhome' %}">CRUD USING AJAX AND JQUERY/Func Views</a> |
+{#                <a class="btn btn-outline-primary" href="{% url 'crudajaxfunbasedhome' %}">CRUD USING AJAX AND JQUERY/Func Views</a> |#}
             </p>
         {% else %}
             <p>

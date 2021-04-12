@@ -86,4 +86,4 @@ def update_item(request, id):
 @method_decorator(login_required(redirect_field_name=''), name='dispatch')
 class HomeClassView(View):
     def get(self, request):
-        return redirect('crudformhome')
+        return render(request,'Home.html')

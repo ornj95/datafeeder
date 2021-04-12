@@ -29,7 +29,9 @@ from account.views import (
     error_403,
 
 )
-
+from feeds.views import (
+    feeds_home,
+)
 from .views import (
     home_views,
     delete_item,
@@ -57,6 +59,7 @@ urlpatterns = [
 
     path('api/', include(router_view_set.urls), name='item_api_view_set'),
 
+    path('feeds_home', feeds_home, name='feeds_home'),
     path('register/', registration_view, name='register'),
     path('logout/', logout_view, name='logout'),
     path('login/', login_view, name='login'),
