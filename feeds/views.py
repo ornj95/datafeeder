@@ -9,10 +9,10 @@ from feeds.models import Feeds
 
 @login_required(redirect_field_name='')
 def feeds_home(request):
-    items = Feeds.objects.all().filter(published__date=datetime.today())
-    items_ordered = items.order_by('-published')
-    items = items_ordered
-    # items = Feeds.objects.all().order_by('-published')
+    # items = Feeds.objects.all().filter(published__date=datetime.today())
+    # items_ordered = items.order_by('-published')
+    # items = items_ordered
+    items = Feeds.objects.all().order_by('-published')[:1000]
 
     # Paginator
     p = Paginator(items, 50)
