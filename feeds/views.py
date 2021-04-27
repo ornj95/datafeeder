@@ -12,10 +12,10 @@ def feeds_home(request):
     # items = Feeds.objects.all().filter(published__date=datetime.today())
     # items_ordered = items.order_by('-published')
     # items = items_ordered
-    items = Feeds.objects.all().order_by('-published')[:1000]
+    items = Feeds.objects.all().order_by('-published')[:10000]
 
     # Paginator
-    p = Paginator(items, 50)
+    p = Paginator(items, 500)
 
     page_num = request.GET.get('page', 1)
 
